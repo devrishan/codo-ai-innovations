@@ -101,11 +101,11 @@
   }
 
   .heading-xl {
-    @apply text-6xl md:text-7xl lg:text-8xl font-black tracking-tighter leading-none bg-clip-text text-transparent bg-gradient-to-r from-white via-slate-200 to-slate-400 drop-shadow-[0_0_10px_rgba(255, 255, 255, 0.1)];
+    @apply text-6xl md:text-7xl lg:text-8xl font-black tracking-tighter leading-none bg-clip-text text-transparent bg-gradient-to-r from-white via-slate-200 to-slate-400 drop-shadow-[0_0_10px_#ffffff1a];
     font-family: var(--font-display);
   }
 
   .text-glow {
-    text-shadow: 0 0 10px rgba(139, 92, 246, 0.5);
+    text-shadow: 0 0 10px #8B5CF680;
   }
 }
