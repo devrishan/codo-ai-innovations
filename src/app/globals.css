@@ -1,42 +1,111 @@
+@import "tailwindcss";
+
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  /* Future Tech Palette - Cyberpunk / AI Innovation */
+
+  /* Backgrounds */
+  --background: #030712;
+  /* Deepest Navy/Black */
+  --surface: #0B1120;
+  /* Dark Navy */
+  --surface-highlight: #1E293B;
+
+  /* Neon Accents */
+  --primary: #8B5CF6;
+  /* Electric Violet */
+  --primary-glow: #A78BFA;
+  --secondary: #06B6D4;
+  /* Cyan/Neon Blue */
+  --accent: #10B981;
+  /* Neon Green */
+
+  /* Text */
+  --foreground: #F8FAFC;
+  --muted: #94A3B8;
+
+  /* Borders */
+  --border: #1E293B;
+  --border-glow: rgba(139, 92, 246, 0.3);
+
+  /* Typography */
+  --font-heading: var(--font-space), sans-serif;
+  --font-body: var(--font-inter), sans-serif;
+  --font-display: var(--font-outfit), sans-serif;
+
+  --max-width: 1400px;
+  /* Wider for immersive feel */
+  --header-height: 80px;
+  --radius: 0.5rem;
+  /* Sharper, tech feel */
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+@layer base {
+  html {
+    @apply scroll-smooth;
+  }
+
+  body {
+    @apply antialiased text-slate-100 bg-[var(--background)];
+    font-family: var(--font-body);
+    background-image:
+      radial-gradient(circle at 50% 0%, rgba(139, 92, 246, 0.15) 0%, transparent 50%),
+      radial-gradient(circle at 80% 10%, rgba(6, 182, 212, 0.1) 0%, transparent 30%);
+    background-attachment: fixed;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    @apply font-bold tracking-tight mb-4;
+    font-family: var(--font-heading);
+    color: var(--foreground);
   }
 }
 
-html,
-body {
-  max-width: 100vw;
-  overflow-x: hidden;
-}
+@layer components {
+  .container {
+    @apply mx-auto px-4 sm:px-6 lg:px-8 max-w-[var(--max-width)];
+  }
 
-body {
-  color: var(--foreground);
-  background: var(--background);
-  font-family: Arial, Helvetica, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-}
+  .section {
+    @apply py-24 md:py-32;
+  }
 
-* {
-  box-sizing: border-box;
-  padding: 0;
-  margin: 0;
-}
+  /* Glassmorphism Utilities */
+  .glass {
+    @apply bg-white/5 backdrop-blur-lg border border-white/10 shadow-xl;
+  }
 
-a {
-  color: inherit;
-  text-decoration: none;
-}
+  .glass-card {
+    @apply bg-slate-900/50 backdrop-blur-md border border-slate-800 hover:border-[var(--primary)]/50 transition-all duration-300;
+  }
 
-@media (prefers-color-scheme: dark) {
-  html {
-    color-scheme: dark;
+  /* Neon Button Styles */
+  .btn {
+    @apply inline-flex items-center justify-center rounded-lg text-base font-bold tracking-wide transition-all duration-300 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--primary)] focus-visible:ring-offset-2 focus-visible:ring-offset-slate-900 disabled:opacity-50 disabled:pointer-events-none;
+    padding: 14px 36px;
+    cursor: pointer;
+    text-transform: uppercase;
+    font-family: var(--font-display);
+  }
+
+  .btn-primary {
+    @apply bg-[var(--primary)] text-white shadow-[0_0_20px_rgba(139, 92, 246, 0.5)] hover:shadow-[0_0_30px_rgba(139, 92, 246, 0.7)] hover:bg-[var(--primary-glow)] hover:-translate-y-1 border border-white/10;
+  }
+
+  .btn-outline {
+    @apply border border-[var(--primary)] text-[var(--primary)] hover:bg-[var(--primary)] hover:text-white hover:shadow-[0_0_20px_rgba(139, 92, 246, 0.5)] bg-transparent;
+  }
+
+  .heading-xl {
+    @apply text-6xl md:text-7xl lg:text-8xl font-black tracking-tighter leading-none bg-clip-text text-transparent bg-gradient-to-r from-white via-slate-200 to-slate-400 drop-shadow-[0_0_10px_rgba(255, 255, 255, 0.1)];
+    font-family: var(--font-display);
+  }
+
+  .text-glow {
+    text-shadow: 0 0 10px rgba(139, 92, 246, 0.5);
   }
 }
