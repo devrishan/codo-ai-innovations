@@ -9,16 +9,14 @@ interface SectionTitleProps {
 
 const SectionTitle = ({ title, subtitle, center = false, light = false }: SectionTitleProps) => {
     return (
-        <div className={`mb-12 ${center ? 'text-center' : 'text-left'}`}>
+        <div className={`mb-16 ${center ? 'text-center' : 'text-left'}`}>
             {subtitle && (
-                <span className={`block uppercase tracking-widest text-sm font-bold mb-2 ${light ? 'text-blue-400' : 'text-blue-600'}`}>
+                <span className={`inline-block py-1 px-3 rounded-full bg-blue-100 text-blue-700 text-sm font-bold tracking-wide mb-4 ${light ? 'bg-white/10 text-blue-300' : ''}`}>
                     {subtitle}
                 </span>
             )}
-            <h2 className={`text-3xl md:text-4xl font-bold relative inline-block ${light ? 'text-white' : 'text-slate-900'}`}>
+            <h2 className={`text-3xl md:text-4xl lg:text-5xl font-bold relative inline-block font-heading ${light ? 'text-white' : 'text-slate-900'}`}>
                 {title}
-                {/* Underline Decoration */}
-                <span className={`absolute -bottom-3 ${center ? 'left-1/2 -translate-x-1/2' : 'left-0'} w-12 h-1 bg-blue-600 rounded-full`}></span>
             </h2>
         </div>
     );

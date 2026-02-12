@@ -10,52 +10,50 @@ const Header = () => {
     // keeping it purely presentational + standard next/link for SEO/Navigation)
 
     return (
-        <header className="fixed top-0 left-0 w-full bg-white/95 backdrop-blur-sm shadow-sm z-50 h-[80px] flex items-center transition-all duration-300">
-            <div className="container flex justify-between items-center h-full">
-                {/* Logo */}
-                <Link href="/" className="flex items-center gap-2 group">
-                    {/* Placeholder for Logo Image if needed, text for now */}
-                    <span className="text-2xl font-bold text-slate-900 tracking-tight group-hover:text-blue-700 transition-colors">
-                        CODO <span className="text-blue-600">AI</span>
-                    </span>
-                </Link>
+        <header className="fixed top-4 left-0 right-0 z-50 transition-all duration-300">
+            <div className="container">
+                <div className="bg-white/90 backdrop-blur-md shadow-lg shadow-blue-900/5 rounded-2xl px-6 h-[72px] flex items-center justify-between border border-white/50">
 
-                {/* Desktop Navigation */}
-                <nav className="hidden lg:flex items-center gap-8">
-                    {[
-                        { name: 'Home', href: '/' },
-                        { name: 'About Us', href: '/about' },
-                        { name: 'Services', href: '/services' },
-                        { name: 'Portfolio', href: '/portfolio' },
-                        { name: 'Career', href: '/careers' },
-                        { name: 'Contact', href: '/contact' },
-                    ].map((link) => (
-                        <Link
-                            key={link.name}
-                            href={link.href}
-                            className="text-[15px] font-medium text-slate-600 hover:text-blue-600 transition-colors relative group py-2"
-                        >
-                            {link.name}
-                            <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-blue-600 transition-all duration-300 group-hover:w-full"></span>
-                        </Link>
-                    ))}
-                </nav>
-
-                {/* CTA Button */}
-                <div className="hidden lg:flex items-center gap-4">
-                    <a href="tel:+15551234567" className="flex items-center gap-2 text-slate-600 hover:text-blue-600 text-sm font-semibold transition-colors">
-                        <Phone size={18} />
-                        <span>+1 (555) 123-4567</span>
-                    </a>
-                    <Link href="/contact" className="btn btn-primary rounded-full px-6 py-2.5 text-sm font-bold uppercase tracking-wide">
-                        Get A Quote
+                    {/* Logo */}
+                    <Link href="/" className="flex items-center gap-2 group">
+                        {/* Text Logo with Academy styling */}
+                        <span className="text-2xl font-bold text-slate-900 tracking-tight group-hover:text-blue-600 transition-colors">
+                            CODO <span className="text-blue-600">ACADEMY</span>
+                        </span>
                     </Link>
-                </div>
 
-                {/* Mobile Menu Toggle */}
-                <button className="lg:hidden p-2 text-slate-700 hover:text-blue-600 transition-colors" aria-label="Toggle Menu">
-                    <Menu size={28} />
-                </button>
+                    {/* Desktop Navigation */}
+                    <nav className="hidden lg:flex items-center gap-1">
+                        {[
+                            { name: 'Home', href: '/' },
+                            { name: 'About', href: '/about' },
+                            { name: 'Services', href: '/services' },
+                            { name: 'Portfolio', href: '/portfolio' },
+                            { name: 'Careers', href: '/careers' },
+                            { name: 'Contact', href: '/contact' },
+                        ].map((link) => (
+                            <Link
+                                key={link.name}
+                                href={link.href}
+                                className="text-sm font-semibold text-slate-600 hover:text-blue-600 hover:bg-blue-50 px-4 py-2 rounded-lg transition-all"
+                            >
+                                {link.name}
+                            </Link>
+                        ))}
+                    </nav>
+
+                    {/* CTA Button */}
+                    <div className="hidden lg:flex items-center gap-3">
+                        <Link href="/contact" className="btn btn-primary rounded-xl px-6 py-2.5 text-sm font-bold shadow-md shadow-blue-500/20 hover:shadow-blue-500/30">
+                            Get Started
+                        </Link>
+                    </div>
+
+                    {/* Mobile Menu Toggle */}
+                    <button className="lg:hidden p-2 text-slate-700 hover:text-blue-600 transition-colors bg-slate-50 rounded-lg" aria-label="Toggle Menu">
+                        <Menu size={24} />
+                    </button>
+                </div>
             </div>
         </header>
     );

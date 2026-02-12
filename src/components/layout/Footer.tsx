@@ -10,11 +10,11 @@ const Footer = () => {
                 <div className="space-y-6">
                     <div className="flex items-center gap-2">
                         <span className="text-2xl font-bold text-white tracking-tight">
-                            CODO <span className="text-blue-500">AI</span>
+                            CODO <span className="text-blue-500">ACADEMY</span>
                         </span>
                     </div>
                     <p className="text-sm leading-relaxed text-slate-400">
-                        A premier technology company delivering enterprise-grade AI solutions, web development, and professional training.
+                        Empowering the next generation of digital innovators with verified skills in AI, Robotics, and Web Development.
                     </p>
                     <div className="flex gap-4">
                         <a href="#" className="w-10 h-10 rounded-full bg-slate-800 flex items-center justify-center hover:bg-blue-600 hover:text-white transition-all">

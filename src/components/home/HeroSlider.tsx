@@ -59,20 +59,20 @@ const HeroSlider = () => {
                             {/* Content */}
                             <div className="relative z-10 container h-full flex flex-col justify-center items-start text-white px-4 md:px-12">
                                 <div className="max-w-3xl animate-in fade-in slide-in-from-bottom-8 duration-1000">
-                                    <span className="inline-block py-1 px-3 rounded bg-white/20 backdrop-blur-sm text-sm font-semibold tracking-wider mb-4 border border-white/30">
-                                        CODO AI INNOVATIONS
+                                    <span className="inline-block py-2 px-4 rounded-full bg-blue-600/20 backdrop-blur-sm text-sm font-bold tracking-wider mb-6 border border-blue-400/30 text-blue-300">
+                                        CODO ACADEMY
                                     </span>
-                                    <h1 className="text-4xl md:text-6xl font-bold mb-6 leading-tight">
+                                    <h1 className="text-5xl md:text-7xl font-bold mb-6 leading-tight tracking-tight font-heading">
                                         {slide.title}
                                     </h1>
-                                    <p className="text-lg md:text-xl text-slate-200 mb-8 max-w-2xl font-light">
+                                    <p className="text-xl md:text-2xl text-slate-300 mb-10 max-w-2xl font-light leading-relaxed">
                                         {slide.subtitle}
                                     </p>
                                     <Link
                                         href={slide.link}
-                                        className="inline-flex items-center gap-2 bg-blue-600 hover:bg-blue-700 text-white px-8 py-4 rounded font-semibold transition-all hover:translate-x-1"
+                                        className="btn btn-primary rounded-full px-10 py-4 text-lg font-bold hover:scale-105 transition-transform"
                                     >
-                                        {slide.cta} <ChevronRight size={20} />
+                                        {slide.cta} <ChevronRight size={20} className="ml-2" />
                                     </Link>
                                 </div>
                             </div>
