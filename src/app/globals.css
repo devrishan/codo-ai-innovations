@@ -1,15 +1,23 @@
 @import "tailwindcss";
 
 :root {
-  /* Corporate Palette - Light Mode (Default) */
-  --primary: #0F172A;
-  --secondary: #3B82F6;
-  --accent: #D97706;
-  --background: #FFFFFF;
-  --surface: #F8FAFC;
-  --foreground: #1E293B;
-  --muted: #64748B;
-  --border: #E2E8F0;
+  /* Corporate Palette - Inspired by iroidtechnologies.com */
+  --primary: #0056b3;
+  /* Strong Corporate Blue */
+  --primary-hover: #004494;
+  --secondary: #17a2b8;
+  /* Cyan/Teal Accent */
+  --accent: #ffc107;
+  /* Gold/Warning for strategic highlights */
+
+  --background: #ffffff;
+  --surface: #f8f9fa;
+  /* Light Grey for sections */
+  --foreground: #212529;
+  /* Dark Grey for text */
+  --muted: #6c757d;
+  /* Grey for secondary text */
+  --border: #dee2e6;
 
   --font-heading: var(--font-inter), sans-serif;
   --font-body: var(--font-inter), sans-serif;
@@ -20,13 +28,16 @@
 
 @media (prefers-color-scheme: dark) {
   :root {
-    --primary: #F8FAFC;
-    --secondary: #60A5FA;
-    --accent: #F59E0B;
-    --background: #0F172A;
-    --surface: #1E293B;
-    --foreground: #F1F5F9;
-    --muted: #94A3B8;
+    /* Dark Mode Adjustment */
+    --primary: #3b82f6;
+    --primary-hover: #2563eb;
+    --secondary: #22d3ee;
+    --accent: #f59e0b;
+
+    --background: #0f172a;
+    --surface: #1e293b;
+    --foreground: #f8fafc;
+    --muted: #94a3b8;
     --border: #334155;
   }
 }
@@ -37,7 +48,7 @@
   }
 
   body {
-    @apply antialiased text-slate-800 bg-white dark:bg-slate-900 dark:text-slate-100;
+    @apply antialiased text-slate-900 bg-white dark:bg-slate-900 dark:text-slate-100;
     font-family: var(--font-body);
     color: var(--foreground);
     background-color: var(--background);
@@ -51,44 +62,36 @@
   h6 {
     @apply font-bold tracking-tight mb-4;
     font-family: var(--font-heading);
-    color: var(--primary);
-  }
-
-  /* Dark mode heading override */
-  @media (prefers-color-scheme: dark) {
-
-    h1,
-    h2,
-    h3,
-    h4,
-    h5,
-    h6 {
-      color: var(--foreground);
-    }
+    color: var(--foreground);
+    /* Use foreground for headings in this theme */
   }
 }
 
 @layer components {
-  .btn {
-    @apply inline-flex items-center justify-center rounded-md text-sm font-medium transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-500 focus-visible:ring-offset-2 disabled:opacity-50 disabled:pointer-events-none;
-    padding: 12px 24px;
-    cursor: pointer;
-    border: none;
-  }
-
-  .btn-primary {
-    @apply bg-blue-600 text-white hover:bg-blue-700 shadow-sm;
-  }
-
-  .btn-secondary {
-    @apply border border-blue-600 text-blue-600 hover:bg-blue-600 hover:text-white bg-transparent;
-  }
-
   .container {
     @apply mx-auto px-4 sm:px-6 lg:px-8 max-w-7xl;
   }
 
   .section {
-    @apply py-16 md:py-24;
+    @apply py-16 md:py-20;
+  }
+
+  .btn {
+    @apply inline-flex items-center justify-center rounded-md text-sm font-semibold transition-all duration-300 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 disabled:opacity-50 disabled:pointer-events-none;
+    padding: 12px 28px;
+    cursor: pointer;
+    border: none;
+  }
+
+  .btn-primary {
+    @apply bg-[var(--primary)] text-white hover:bg-[var(--primary-hover)] shadow-md hover:shadow-lg hover:-translate-y-0.5;
+  }
+
+  .btn-outline {
+    @apply border-2 border-[var(--primary)] text-[var(--primary)] hover:bg-[var(--primary)] hover:text-white bg-transparent;
+  }
+
+  .card-hover {
+    @apply transition-all duration-300 hover:shadow-xl hover:-translate-y-1;
   }
 }
