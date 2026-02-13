@@ -1,6 +1,7 @@
 import Header from "@/components/shared/Header";
 import HeroSection from "@/components/shared/HeroSection";
 import ServicesSection from "@/components/shared/ServicesSection";
+import Footer from "@/components/shared/Footer";
 
 export default function Theme3Page() {
     return (
@@ -8,6 +9,7 @@ export default function Theme3Page() {
             <Header />
             <HeroSection />
             <ServicesSection />
+            <Footer />
         </main>
     );
 }
