@@ -1,20 +1,20 @@
 'use client';
 
-import { motion } from 'framer-motion';
-import { cn } from '@/lib/utils'; // Assuming utilities are set up, but will inline for valid build
+import { motion, Variants } from 'framer-motion';
+import { cn } from '@/lib/utils';
 
 export const TextReveal = ({ text, className }: { text: string; className?: string }) => {
     const words = text.split(" ");
 
-    const container = {
+    const container: Variants = {
         hidden: { opacity: 0 },
-        visible: (i = 1) => ({
+        visible: (i: number = 1) => ({
             opacity: 1,
             transition: { staggerChildren: 0.12, delayChildren: 0.04 * i },
         }),
     };
 
-    const child = {
+    const child: Variants = {
         visible: {
             opacity: 1,
             y: 0,
