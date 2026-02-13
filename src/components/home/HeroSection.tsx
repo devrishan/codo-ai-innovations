@@ -1,47 +1,84 @@
 'use client';
 
 import Link from 'next/link';
-import { ArrowRight, Cpu, Sparkles } from 'lucide-react';
+import { ArrowRight, Sparkles, GraduationCap, Briefcase } from 'lucide-react';
+import { motion } from 'framer-motion';
+import { TextReveal } from '@/components/ui/TextReveal';
+import { SpotlightCard } from '@/components/ui/SpotlightCard';
 
 const HeroSection = () => {
     return (
-        <section className="relative min-h-[90vh] flex items-center justify-center overflow-hidden pt-20">
-            {/* Abstract Background Elements */}
-            <div className="absolute top-1/4 left-1/4 w-[500px] h-[500px] bg-purple-600/20 rounded-full blur-[120px] animate-pulse"></div>
-            <div className="absolute bottom-1/4 right-1/4 w-[400px] h-[400px] bg-cyan-500/10 rounded-full blur-[100px] animate-pulse delay-1000"></div>
+        <section className="relative min-h-screen flex flex-col items-center justify-center overflow-hidden pt-24 pb-12">
 
-            {/* Grid Pattern Overlay */}
-            <div className="absolute inset-0 bg-[linear-gradient(rgba(255,255,255,0.03)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,0.03)_1px,transparent_1px)] bg-[size:50px_50px] [mask-image:radial-gradient(ellipse_at_center,black_40%,transparent_80%)]"></div>
+            {/* Background Glows (Corporate Blue) */}
+            <motion.div
+                animate={{ scale: [1, 1.2, 1], opacity: [0.2, 0.3, 0.2] }}
+                transition={{ duration: 8, repeat: Infinity, ease: "easeInOut" }}
+                className="absolute top-[-10%] left-[-10%] w-[600px] h-[600px] bg-blue-600/20 rounded-full blur-[120px]"
+            />
+            <motion.div
+                animate={{ scale: [1, 1.5, 1], opacity: [0.1, 0.3, 0.1] }}
+                transition={{ duration: 10, repeat: Infinity, ease: "easeInOut", delay: 1 }}
+                className="absolute bottom-[-10%] right-[-10%] w-[500px] h-[500px] bg-sky-500/10 rounded-full blur-[100px]"
+            />
 
-            <div className="container relative z-10 px-4 text-center">
-                <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/5 border border-white/10 text-cyan-400 text-sm font-medium mb-8 backdrop-blur-sm animate-in fade-in slide-in-from-bottom-4 duration-700">
-                    <Sparkles size={16} />
-                    <span className="tracking-widest uppercase">The Future of Intelligence</span>
+            <div className="container relative z-10 px-4">
+
+                {/* Hero Header */}
+                <div className="text-center mb-16 max-w-4xl mx-auto">
+                    <motion.div
+                        initial={{ opacity: 0, y: 20 }}
+                        animate={{ opacity: 1, y: 0 }}
+                        transition={{ duration: 0.5 }}
+                        className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-blue-500/10 border border-blue-500/20 text-blue-400 text-sm font-medium mb-6 backdrop-blur-sm"
+                    >
+                        <Sparkles size={16} />
+                        <span className="tracking-widest uppercase">Innovation Ecosystem</span>
+                    </motion.div>
+
+                    <h1 className="heading-xl mb-6">
+                        CODO AI <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-sky-600">INNOVATIONS</span>
+                    </h1>
+
+                    <p className="text-xl text-slate-400 mb-8 max-w-2xl mx-auto leading-relaxed">
+                        Pioneering the future through education and enterprise solutions.
+                        We are the parent ecosystem empowering the next generation of talent and building autonomous digital systems.
+                    </p>
                 </div>
 
-                <h1 className="heading-xl mb-8 max-w-5xl mx-auto animate-in fade-in slide-in-from-bottom-8 duration-1000">
-                    Build the <span className="text-transparent bg-clip-text bg-gradient-to-r from-purple-500 via-pink-500 to-cyan-500 text-glow">Impossible</span> with AI
-                </h1>
+                {/* Ecosystem Split Cards */}
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-5xl mx-auto">
 
-                <p className="text-xl md:text-2xl text-slate-400 mb-12 max-w-3xl mx-auto leading-relaxed animate-in fade-in slide-in-from-bottom-12 duration-1000 delay-200">
-                    We engineer autonomous systems, immersive digital experiences, and next-gen software solutions that redefine what's possible.
-                </p>
+                    {/* Academy Card */}
+                    <SpotlightCard spotlightColor="rgba(59, 130, 246, 0.2)" className="h-full p-8 md:p-12 text-center group border-blue-500/10">
+                        <div className="w-20 h-20 mx-auto bg-blue-500/10 rounded-2xl flex items-center justify-center mb-6 group-hover:bg-blue-500/20 transition-colors">
+                            <GraduationCap size={40} className="text-blue-400" />
+                        </div>
+                        <h2 className="text-3xl font-bold text-white mb-4 font-display">CODO Academy</h2>
+                        <p className="text-slate-400 mb-8 leading-relaxed">
+                            Premier tech education and training. We shape the innovators of tomorrow with industry-aligned curriculum and mentorship.
+                        </p>
+                        <Link href="https://codoacademy.com" className="btn btn-outline w-full justify-between group-hover:bg-blue-500/10 group-hover:border-blue-500/50">
+                            Visit Academy <ArrowRight size={18} />
+                        </Link>
+                    </SpotlightCard>
 
-                <div className="flex flex-col sm:flex-row items-center justify-center gap-6 animate-in fade-in slide-in-from-bottom-16 duration-1000 delay-300">
-                    <Link href="/contact" className="btn btn-primary group">
-                        Start Innovation <ArrowRight className="ml-2 group-hover:translate-x-1 transition-transform" />
-                    </Link>
-                    <Link href="/services" className="btn btn-outline group">
-                        Explore Solutions
-                    </Link>
+                    {/* Agency Card */}
+                    <SpotlightCard spotlightColor="rgba(14, 165, 233, 0.2)" className="h-full p-8 md:p-12 text-center group border-sky-500/10 bg-gradient-to-b from-white/5 to-transparent">
+                        <div className="w-20 h-20 mx-auto bg-sky-500/10 rounded-2xl flex items-center justify-center mb-6 group-hover:bg-sky-500/20 transition-colors">
+                            <Briefcase size={40} className="text-sky-400" />
+                        </div>
+                        <h2 className="text-3xl font-bold text-white mb-4 font-display">CODO Agency</h2>
+                        <p className="text-slate-400 mb-8 leading-relaxed">
+                            Enterprise-grade digital solutions. We engineer custom software, AI systems, and mobile applications for global brands.
+                        </p>
+                        <Link href="/services" className="btn btn-primary w-full justify-between shadow-blue-500/20">
+                            Explore Services <ArrowRight size={18} />
+                        </Link>
+                    </SpotlightCard>
+
                 </div>
-            </div>
 
-            {/* Scroll Indicator */}
-            <div className="absolute bottom-10 left-1/2 -translate-x-1/2 animate-bounce text-slate-500">
-                <div className="w-6 h-10 border-2 border-slate-700 rounded-full flex justify-center pt-2">
-                    <div className="w-1 h-2 bg-purple-500 rounded-full animate-pulse"></div>
-                </div>
             </div>
         </section>
     );

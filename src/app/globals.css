@@ -1,23 +1,23 @@
 @import "tailwindcss";
 
 :root {
-  /* Future Tech Palette - Cyberpunk / AI Innovation */
+  /* CODO AI Innovations Palette - Corporate Tech (Theme 3) */
 
   /* Backgrounds */
-  --background: #030712;
-  /* Deepest Navy/Black */
-  --surface: #0B1120;
-  /* Dark Navy */
+  --background: #020617;
+  /* Deep Slate/Black */
+  --surface: #0F172A;
+  /* Slate 900 */
   --surface-highlight: #1E293B;
 
-  /* Neon Accents */
-  --primary: #8B5CF6;
-  /* Electric Violet */
-  --primary-glow: #A78BFA;
-  --secondary: #06B6D4;
-  /* Cyan/Neon Blue */
+  /* Innovation Blue Accents */
+  --primary: #3B82F6;
+  /* Bright Blue (Trust & Tech) */
+  --primary-glow: #60A5FA;
+  --secondary: #0EA5E9;
+  /* Sky Blue */
   --accent: #10B981;
-  /* Neon Green */
+  /* Success Green */
 
   /* Text */
   --foreground: #F8FAFC;
@@ -25,7 +25,8 @@
 
   /* Borders */
   --border: #1E293B;
-  --border-glow: rgba(139, 92, 246, 0.3);
+  --border-glow: rgba(59, 130, 246, 0.3);
+  /* Blue Glow */
 
   /* Typography */
   --font-heading: var(--font-space), sans-serif;
@@ -33,10 +34,8 @@
   --font-display: var(--font-outfit), sans-serif;
 
   --max-width: 1400px;
-  /* Wider for immersive feel */
   --header-height: 80px;
   --radius: 0.5rem;
-  /* Sharper, tech feel */
 }
 
 @layer base {
@@ -47,10 +46,31 @@
   body {
     @apply antialiased text-slate-100 bg-[var(--background)];
     font-family: var(--font-body);
+    /* Premium Background with Noise Texture */
     background-image:
       radial-gradient(circle at 50% 0%, rgba(139, 92, 246, 0.15) 0%, transparent 50%),
-      radial-gradient(circle at 80% 10%, rgba(6, 182, 212, 0.1) 0%, transparent 30%);
+      radial-gradient(circle at 80% 10%, rgba(6, 182, 212, 0.1) 0%, transparent 30%),
+      url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)' opacity='0.05'/%3E%3C/svg%3E");
     background-attachment: fixed;
+  }
+
+  /* Custom Scientific/Premium Scrollbar */
+  ::-webkit-scrollbar {
+    width: 6px;
+    height: 6px;
+  }
+
+  ::-webkit-scrollbar-track {
+    background: #030712;
+  }
+
+  ::-webkit-scrollbar-thumb {
+    background: #1E293B;
+    border-radius: 3px;
+  }
+
+  ::-webkit-scrollbar-thumb:hover {
+    background: #8B5CF6;
   }
 
   h1,
@@ -62,6 +82,8 @@
     @apply font-bold tracking-tight mb-4;
     font-family: var(--font-heading);
     color: var(--foreground);
+    letter-spacing: -0.02em;
+    /* Tighter tracking for premium feel */
   }
 }
 
