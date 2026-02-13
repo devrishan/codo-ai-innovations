@@ -35,11 +35,17 @@ const Footer = () => {
                     <div>
                         <h4 className="text-[var(--foreground)] font-bold mb-6 font-display tracking-wide">Explore</h4>
                         <ul className="space-y-3">
-                            {['About Us', 'Services', 'Our Work', 'Careers', 'Contact'].map((item) => (
-                                <li key={item}>
-                                    <Link href={`/${item.toLowerCase().replace(' ', '-')}`} className="text-[var(--muted)] hover:text-[var(--primary)] transition-colors flex items-center gap-2 group">
+                            {[
+                                { name: 'Corporate', href: '/corporate' },
+                                { name: 'Academy', href: '/academy' },
+                                { name: 'Agency', href: '/agency' },
+                                { name: 'About', href: '/about' },
+                                { name: 'Contact', href: '/contact' },
+                            ].map((item) => (
+                                <li key={item.name}>
+                                    <Link href={item.href} className="text-[var(--muted)] hover:text-[var(--primary)] transition-colors flex items-center gap-2 group">
                                         <span className="w-1 h-1 bg-[var(--primary)] rounded-full opacity-0 group-hover:opacity-100 transition-opacity"></span>
-                                        {item}
+                                        {item.name}
                                     </Link>
                                 </li>
                             ))}

@@ -27,11 +27,10 @@ const Header = () => {
                     {/* Desktop Navigation */}
                     <nav className="hidden lg:flex items-center gap-1">
                         {[
-                            { name: 'Home', href: '/' },
+                            { name: 'Corporate', href: '/corporate' },
+                            { name: 'Academy', href: '/academy' },
+                            { name: 'Agency', href: '/agency' },
                             { name: 'About', href: '/about' },
-                            { name: 'Services', href: '/services' },
-                            { name: 'Portfolio', href: '/portfolio' },
-                            { name: 'Careers', href: '/careers' },
                             { name: 'Contact', href: '/contact' },
                         ].map((link) => (
                             <Link
