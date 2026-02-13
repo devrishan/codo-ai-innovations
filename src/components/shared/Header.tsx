@@ -28,7 +28,7 @@ const Header = () => {
                     <nav className="hidden lg:flex items-center gap-1">
                         {[
                             { name: 'Corporate', href: '/corporate' },
-                            { name: 'Academy', href: '/academy' },
+                            { name: 'Academy (V1)', href: '/v1' },
                             { name: 'Agency', href: '/agency' },
                             { name: 'About', href: '/about' },
                             { name: 'Contact', href: '/contact' },

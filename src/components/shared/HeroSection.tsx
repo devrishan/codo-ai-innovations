@@ -57,8 +57,8 @@ const HeroSection = () => {
                         <p className="text-[var(--muted)] mb-8 leading-relaxed">
                             Premier tech education and training. We shape the innovators of tomorrow with industry-aligned curriculum and mentorship.
                         </p>
-                        <Link href="/academy" className="flex items-center justify-between px-6 py-3 rounded-[var(--radius)] border border-[var(--primary)] text-[var(--primary)] hover:bg-[var(--primary)] hover:text-white transition-all">
-                            Visit Academy <ArrowRight size={18} />
+                        <Link href="/v1" className="flex items-center justify-between px-6 py-3 rounded-[var(--radius)] border border-[var(--primary)] text-[var(--primary)] hover:bg-[var(--primary)] hover:text-white transition-all">
+                            Visit Academy (V1) <ArrowRight size={18} />
                         </Link>
                     </SpotlightCard>
 
