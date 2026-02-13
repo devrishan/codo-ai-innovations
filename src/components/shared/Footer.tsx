@@ -36,9 +36,9 @@ const Footer = () => {
                         <h4 className="text-[var(--foreground)] font-bold mb-6 font-display tracking-wide">Explore</h4>
                         <ul className="space-y-3">
                             {[
-                                { name: 'Corporate', href: '/corporate' },
+                                { name: 'Corporate (V3)', href: '/v3' },
                                 { name: 'Academy (V1)', href: '/v1' },
-                                { name: 'Agency', href: '/agency' },
+                                { name: 'Agency (V2)', href: '/v2' },
                                 { name: 'About', href: '/about' },
                                 { name: 'Contact', href: '/contact' },
                             ].map((item) => (

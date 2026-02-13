@@ -71,8 +71,8 @@ const HeroSection = () => {
                         <p className="text-[var(--muted)] mb-8 leading-relaxed">
                             Enterprise-grade digital solutions. We engineer custom software, AI systems, and mobile applications for global brands.
                         </p>
-                        <Link href="/agency" className="flex items-center justify-between px-6 py-3 rounded-[var(--radius)] bg-[var(--primary)] text-white shadow-[0_0_15px_var(--primary-glow)] hover:opacity-90 transition-all">
-                            Explore Services <ArrowRight size={18} />
+                        <Link href="/v2" className="flex items-center justify-between px-6 py-3 rounded-[var(--radius)] bg-[var(--primary)] text-white shadow-[0_0_15px_var(--primary-glow)] hover:opacity-90 transition-all">
+                            Explore Services (V2) <ArrowRight size={18} />
                         </Link>
                     </SpotlightCard>
 
