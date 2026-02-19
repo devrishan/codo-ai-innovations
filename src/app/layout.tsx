@@ -1,9 +1,10 @@
-import type { Metadata } from "next";
-import "@/app/globals.css";
+
+import type { Metadata } from 'next';
+import './globals.css';
 
 export const metadata: Metadata = {
-    title: "Codo AI Innovations",
-    description: "Pioneering the future of digital intelligence.",
+    title: 'Codo AI Innovations - Multi-Model Showcase',
+    description: 'Portfolio of design models for Codo AI Innovations.',
 };
 
 export default function RootLayout({
@@ -13,7 +14,7 @@ export default function RootLayout({
 }>) {
     return (
         <html lang="en">
-            <body>
+            <body className="antialiased">
                 {children}
             </body>
         </html>
